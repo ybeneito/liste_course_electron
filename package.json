@@ -1,0 +1,27 @@
+{
+  "name": "courses",
+  "version": "1.0.0",
+  "description": "My first win app, just a lil shopping list",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . MesCourses --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"MesCourses\"",    
+    "package-linux": "electron-packager . MesCourses --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/icon.png --prune=true --out=release-builds",
+    "build": "electron-packager . app --platform win32 --arch x64 --out dist/",
+    "setup": "electron-installer-windows --src dist/app-win32-x64/ --dest dist/installers/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "courses"
+  },
+  "author": "Beneito Yohan",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^13.1.7"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.3.0"
+    
+  }
+}
